@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: expense-tracker-api
+  datasource:
+    url: jdbc:postgresql://localhost:5000/expense-tracker
+    username: dimas
+    password: password
+  jooq:
+    sql-dialect: postgres
