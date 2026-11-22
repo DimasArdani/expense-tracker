@@ -19,7 +19,7 @@ public class ListTransactionServiceImpl implements ListTransactionService{
 
     @Override
     public List<ListTransactionOutput> getPage(Integer page, Integer size) {
-        List<Transactions> transactionOutputs = transactionRepository.findAll();
+        List<Transactions> transactionOutputs = transactionRepository.findAll(page, size);
         return buildOutput(transactionOutputs);
     }
 

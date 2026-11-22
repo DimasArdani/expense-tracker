@@ -9,7 +9,7 @@ import java.util.UUID;
 
 public interface TransactionRepository {
     Transactions save(TransactionDTO transactions);
-    List<Transactions> findAll();
+    List<Transactions> findAll(Integer page, Integer size);
     Transactions edit(UUID id, TransactionDTO transactions);
     Transactions delete(UUID id);
     Transactions hardDelete(UUID id);

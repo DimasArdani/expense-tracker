@@ -1,7 +1,8 @@
-package com.github.green.rato.expense.tracker.api.repository;
+package com.github.green.rato.expense.tracker.api.repository.impl;
 
 import com.github.green.rato.expense.tracker.api.common.Status;
 import com.github.green.rato.expense.tracker.api.model.TransactionDTO;
+import com.github.green.rato.expense.tracker.api.repository.TransactionRepository;
 import com.github.green.rato.expensetracker.jooq.tables.pojos.Transactions;
 import org.springframework.stereotype.Repository;
 import org.jooq.*;
@@ -33,9 +34,11 @@ public class TransactionRepositoryImpl implements TransactionRepository {
     }
 
     @Override
-    public List<Transactions> findAll() {
+    public List<Transactions> findAll(Integer page, Integer size) {
         return dsl.selectFrom(TRANSACTIONS)
                 .where(TRANSACTIONS.STATUS.eq(Status.ACTIVE.getStatus()))
+                .limit(size)
+                .offset(page)
                 .fetchInto(Transactions.class);
     }
 

@@ -1,6 +1,4 @@
 package com.github.green.rato.expense.tracker.api.model;
-
-import com.github.green.rato.expense.tracker.api.common.Status;
 import lombok.Builder;
 
 import java.math.BigDecimal;

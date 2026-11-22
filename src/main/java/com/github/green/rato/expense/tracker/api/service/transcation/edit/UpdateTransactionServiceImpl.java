@@ -2,7 +2,6 @@ package com.github.green.rato.expense.tracker.api.service.transcation.edit;
 
 import com.github.green.rato.expense.tracker.api.model.TransactionDTO;
 import com.github.green.rato.expense.tracker.api.repository.TransactionRepository;
-import com.github.green.rato.expense.tracker.api.service.transcation.create.CreateTransactionInput;
 import com.github.green.rato.expensetracker.jooq.tables.pojos.Transactions;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
