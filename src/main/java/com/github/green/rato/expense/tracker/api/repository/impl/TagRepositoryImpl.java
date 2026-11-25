@@ -7,6 +7,7 @@ import com.github.green.rato.expensetracker.jooq.tables.pojos.Tag;
 import org.jooq.DSLContext;
 import org.springframework.stereotype.Repository;
 
+import java.time.OffsetDateTime;
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
@@ -24,6 +25,7 @@ public class TagRepositoryImpl implements TagRepository {
         return dsl.insertInto(TAG)
                 .set(TAG.NAME, tag.name())
                 .set(TAG.STATUS, tag.status())
+                .set(TAG.CREATED_DATE, OffsetDateTime.now())
                 .returning()
                 .fetchSingleInto(Tag.class);
     }
@@ -33,6 +35,7 @@ public class TagRepositoryImpl implements TagRepository {
         return dsl.update(TAG)
                 .set(TAG.NAME, tag.name())
                 .set(TAG.STATUS, tag.status())
+                .set(TAG.UPDATED_DATE, java.time.OffsetDateTime.now())
                 .where(TAG.ID.eq(id))
                 .returning()
                 .fetchSingleInto(Tag.class);

@@ -1,5 +1,6 @@
 package com.github.green.rato.expense.tracker.api.service.tag.create;
 
+import com.github.green.rato.expense.tracker.api.common.Status;
 import com.github.green.rato.expense.tracker.api.model.TagDTO;
 import com.github.green.rato.expense.tracker.api.repository.TagRepository;
 import com.github.green.rato.expensetracker.jooq.tables.pojos.Tag;
@@ -30,6 +31,7 @@ public class CreateTagServiceImpl implements CreateTagService{
     private TagDTO buildData(CreateTagInput input) {
         return TagDTO.builder()
                 .name(input.name())
+                .status(Status.ACTIVE.getStatus())
                 .build();
     }
 }
