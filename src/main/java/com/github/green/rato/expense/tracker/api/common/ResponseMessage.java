@@ -5,6 +5,7 @@ public enum ResponseMessage {
     SUCCESS_UPDATED("ITEM HAS BEEN UPDATED"),
     SUCCESS_DELETED("ITEM HAS BEEN DELETED"),
     SUCCESS_FETCHED("ITEM HAS BEEN FETCHED"),
+    LOGIN("LOGIN SUCCESS"),
     ERROR("ERROR");
 
     private final String message;

@@ -21,4 +21,7 @@ public record ApiResponse<T>(
         return new ApiResponse<>(false, "ERROR", message, null, Instant.now());
     }
 
+    public static Object error(RuntimeException error) {
+        return new ApiResponse<>(false, "ERROR", "Internal Server Error", null, Instant.now());
+    }
 }
